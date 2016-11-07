@@ -1,6 +1,7 @@
 package com.personal.maroof.remotedoorbell;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ import android.view.View;
  * status bar and navigation/system bar) with user interaction.
  */
 public class MainScreenActivity extends AppCompatActivity {
+
+
+
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -23,7 +27,7 @@ public class MainScreenActivity extends AppCompatActivity {
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
      * user interaction before hiding the system UI.
      */
-    private static final int AUTO_HIDE_DELAY_MILLIS = 2000;
+    private static final int AUTO_HIDE_DELAY_MILLIS = 1000;
 
     /**
      * Some older devices needs a small delay between UI widget updates
@@ -91,7 +95,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = findViewById(R.id.fullscreen_content);
+        mContentView = findViewById(R.id.show_ui);
 
 
         // Set up the user interaction to manually show or hide the system UI.

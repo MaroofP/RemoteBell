@@ -60,6 +60,15 @@
 
         </LinearLayout>
 
+        <Button
+            android:gravity="center"
+            android:id="@+id/show_ui"
+            android:text="@string/s_u"
+            android:textStyle="bold"
+            android:background="@color/black_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"/>
     </LinearLayout>
 
     <!-- This FrameLayout insets its children based on system windows using

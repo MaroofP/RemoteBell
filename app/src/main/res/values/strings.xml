@@ -4,4 +4,5 @@
     <string name="dummy_button">Settings</string>
     <string name="dummy_content">Ring\nThe Bell</string>
     <string name="dummy_button2">Exit</string>
+    <string name="s_u">Show UI</string>
 </resources>
