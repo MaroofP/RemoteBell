@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">RemoteDoorBell</string>
 
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_button">Ring The Bell!</string>
+    <string name="dummy_content">Ring\nThe Bell</string>
+    <string name="dummy_button2">Cancel</string>
 </resources>
