@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <color android:color="gray"/>
+        <color android:color="@color/colorPrimary"/>
     </item>
     <item>
         <bitmap
-            android:src="mipmap/ic_splash.png"
+            android:src="@mipmap/ic_splash"
             android:tileMode="disabled"
             android:gravity="center"/>
     </item>
