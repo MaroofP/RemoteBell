@@ -11,7 +11,27 @@ import android.os.Build;
 
 public class networkHandle {
 
+
+    Context mContext;
+
+    NsdManager mNsdManager;
+    NsdManager.ResolveListener mResolveListener;
+    NsdManager.DiscoveryListener mDiscoveryListener;
+    NsdManager.RegistrationListener mRegistrationListener;
+    NsdServiceInfo mService;
+
+
     private String mServiceName;
+
+
+
+    public networkHandle(Context context) {
+        mContext = context;
+        mNsdManager = (NsdManager) context.getSystemService(Context.NSD_SERVICE);
+    }
+
+
+
     public void registerService(int port) {
         // Create the NsdServiceInfo object, and populate it.
 
@@ -23,8 +43,6 @@ public class networkHandle {
             serviceInfo.setServiceName("RingBell");
             serviceInfo.setServiceType("_http._tcp.");
             serviceInfo.setPort(port);
-
-            mNsdManager = Context.getSystemService(Context.NSD_SERVICE);
 
             mNsdManager.registerService(
                     serviceInfo, NsdManager.PROTOCOL_DNS_SD, mRegistrationListener);
