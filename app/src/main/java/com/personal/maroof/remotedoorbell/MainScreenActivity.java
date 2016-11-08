@@ -1,7 +1,6 @@
 package com.personal.maroof.remotedoorbell;
 
 import android.annotation.SuppressLint;
-import android.os.Build;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
