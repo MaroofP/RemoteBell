@@ -95,7 +95,33 @@ public class networkHandle {
 
 
 
+    public void initializeDiscoveryListener() {
 
+        // Instantiate a new DiscoveryListener
+        mDiscoveryListener = new NsdManager.DiscoveryListener() {
+
+            //  Called as soon as service discovery begins.
+            @Override
+            public void onDiscoveryStarted(String regType) {
+                Log.d(TAG, "Service discovery started");
+            }
+
+            @Override
+            public void onServiceFound(NsdServiceInfo service) {
+                // A service was found!  Do something with it.
+                Log.d(TAG, "Service discovery success" + service);
+                if (!service.getServiceType().equals(SERVICE_TYPE)) {
+                    // Service type is the string containing the protocol and
+                    // transport layer for this service.
+                    Log.d(TAG, "Unknown Service Type: " + service.getServiceType());
+                } else if (service.getServiceName().equals(mServiceName)) {
+                    // The name of the service tells the user what they'd be
+                    // connecting to. It could be "Bob's Chat App".
+                    Log.d(TAG, "Same machine: " + mServiceName);
+                } else if (service.getServiceName().contains("NsdChat")){
+                    mNsdManager.resolveService(service, mResolveListener);
+                }
+            }
 
 
 
