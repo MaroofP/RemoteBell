@@ -24,19 +24,17 @@ public class networkHandle {
     private String mServiceName;
 
 
-
     public networkHandle(Context context) {
         mContext = context;
         mNsdManager = (NsdManager) context.getSystemService(Context.NSD_SERVICE);
     }
 
 
-
     public void registerService(int port) {
         // Create the NsdServiceInfo object, and populate it.
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            NsdServiceInfo serviceInfo  = new NsdServiceInfo();
+            NsdServiceInfo serviceInfo = new NsdServiceInfo();
 
             // The name is subject to change based on conflicts
             // with other services advertised on the same network.
@@ -48,12 +46,9 @@ public class networkHandle {
                     serviceInfo, NsdManager.PROTOCOL_DNS_SD, mRegistrationListener);
 
 
-
-
         }
 
     }
-
 
 
     public void initializeRegistrationListener() {
@@ -92,8 +87,8 @@ public class networkHandle {
 
 
     }
-
-
+}
+/*
 
     public void initializeDiscoveryListener() {
 
@@ -126,3 +121,5 @@ public class networkHandle {
 
 
 }
+
+*/
