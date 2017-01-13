@@ -27,7 +27,8 @@ public class AboutActivity extends AppCompatActivity {
 
     void back(){
         Intent intent = new Intent(this,MainScreenActivity.class);
-
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+        finish();
         }
 }
