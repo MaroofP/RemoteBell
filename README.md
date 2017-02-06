@@ -1,4 +1,4 @@
 # RemoteBell
-An Android application to remotely activate a Bell on the same (router) network.
+A Simple Android application to activate an Alarm/Bell on the same network.
 
 By Maroof Ur Rahman Pasha
