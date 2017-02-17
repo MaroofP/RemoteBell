@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-
+import android.net.nsd.NsdServiceInfo;
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -14,7 +14,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
     private View mContentView;
     private View mContent;
-
+    NetworkHandle mNsdHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,9 @@ public class MainScreenActivity extends AppCompatActivity {
             }
         });
 
+        mNsdHelper = new NetworkHandle(this);
+        mNsdHelper.initializeNsd();
+
 
     }
 
@@ -80,6 +83,30 @@ public class MainScreenActivity extends AppCompatActivity {
     }
 
 
+
+    @Override
+    protected void onPause() {
+        if (mNsdHelper != null) {
+            mNsdHelper.tearDown();
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mNsdHelper != null) {
+            mNsdHelper.registerService(mConnection.getLocalPort());
+            mNsdHelper.discoverServices();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        mNsdHelper.tearDown();
+       // mConnection.tearDown();
+        super.onDestroy();
+    }
 
 
 
