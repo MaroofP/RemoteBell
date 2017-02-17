@@ -3,8 +3,12 @@ package com.personal.maroof.remotedoorbell;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.net.nsd.NsdServiceInfo;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -51,11 +55,26 @@ public class MainScreenActivity extends AppCompatActivity {
                 showAbout();
             }
         });
+        Switch s = (Switch) findViewById(R.id.ringButton);
+        s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
-        mNsdHelper = new NetworkHandle(this);
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,
+                                         boolean isChecked) {
+
+                if(isChecked){
+                    startRing();
+                }else{
+
+                    }
+
+            }
+        });
+
+     /*   mNsdHelper = new NetworkHandle(this);
         mNsdHelper.initializeNsd();
 
-
+    */
     }
 
 
@@ -72,6 +91,18 @@ public class MainScreenActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
 
+    }
+
+    protected void startRing(){
+  /*
+        NsdServiceInfo service = mNsdHelper.getChosenServiceInfo();
+        if (service != null) {
+
+        } else {
+            Log.w( "MAIN ACTIVITY","No service to connect to!");
+        }
+*/
+        Log.d( "MAIN ACTIVITY","No service to connect to!");
     }
 
     protected void exit(View view){
@@ -96,7 +127,7 @@ public class MainScreenActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (mNsdHelper != null) {
-            mNsdHelper.registerService(mConnection.getLocalPort());
+         //   mNsdHelper.registerService(mConnection.getLocalPort());
             mNsdHelper.discoverServices();
         }
     }
