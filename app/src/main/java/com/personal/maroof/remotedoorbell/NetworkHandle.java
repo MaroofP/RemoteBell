@@ -19,7 +19,6 @@ public class NetworkHandle {
     //need updates
     Context mContext;
     NsdManager mNsdManager;
-    NsdManager.ResolveListener mResolveListener;
     NsdManager.DiscoveryListener mDiscoveryListener;
     NsdManager.RegistrationListener mRegistrationListener;
     NsdManager.ResolveListener mResolveListener;
