@@ -18,12 +18,11 @@ public class NetworkHandle {
 
     //need updates
     Context mContext;
-
     NsdManager mNsdManager;
     NsdManager.ResolveListener mResolveListener;
     NsdManager.DiscoveryListener mDiscoveryListener;
     NsdManager.RegistrationListener mRegistrationListener;
-
+    NsdManager.ResolveListener mResolveListener;
 
     public static final String SERVICE_TYPE = "_http._tcp.";
 
