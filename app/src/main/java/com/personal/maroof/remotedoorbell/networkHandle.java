@@ -16,7 +16,7 @@ import static android.support.v7.widget.StaggeredGridLayoutManager.TAG;
 
 public class NetworkHandle {
 
-
+    //need updates
     Context mContext;
 
     NsdManager mNsdManager;
